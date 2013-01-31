@@ -1,0 +1,427 @@
+include header
+#page-index.page.secondary
+  .page-header
+    .page-header-content
+      h1
+        | Tiles
+        small demo
+      a.back-button.big.page-back(href='/')
+  .page-region
+    .page-region-content
+      .grid
+        .row
+          .span10
+            h2 Windows 8 Start Page Demo
+            p
+              a(href='windows8start.php') Demo page
+            h2 General info
+            p
+              | Tiles are the representation of your app or sub module. The content shown on your tile can, and ideally should, change regularly, especially if your tile can communicate new, real-time information to your user. Tiles can show a combination of text and images, and a badge to show status.
+              | Tile is a block object and can be placed in any container.
+            p
+              | The default tile size is 150x150 pixels. Tile size may be increased with add the next subclasses for tile object:
+              code .double(-vertical)
+              | ,
+              code .triple(-vertical)
+              | ,
+              code .quadro(-vertical)
+              | .
+            p
+              | For tile may be set status "selected". You also may be change background color for tile with classes
+              code .bg-color-*
+            h3 Tile definition:
+            pre.prettyprint.linenums.
+              \n    <div class="tile"></div>
+                  <div class="tile double"></div>
+                  <div class="tile selected"></div>
+                  <div class="tile bg-color-orange"></div>
+
+            .clearfix
+              .tile
+              .tile.double
+              .tile.selected
+              .tile.bg-color-orange
+            h3 Tile content
+            p
+              | Tile content can be placed in sub container with class
+              code .tile-content
+              | . Class .tile-content has padding 10px from top, bottom and 15px from left, right.
+            pre.prettyprint.linenums.
+              \n    <div class="tile">
+                      <div class="tile-content">
+
+                      </div>
+                  </div>
+
+            .clearfix
+              .tile.double.bg-color-green
+                .tile-content
+                  h2 mattberg@live.com
+                  h5 Re: Wedding Annoucement!
+                  p
+                    | Congratulations! I'm really excited to celebrate with you all. Thanks for...
+                .brand
+                  .badge 12
+                  img.icon(src='images/Mail128.png')
+              .tile.bg-color-red.icon
+                b.check
+                .tile-content
+                  img(src='images/Market128.png')
+                .brand
+                  span.name Store
+                  span.badge 6
+              .tile.double.bg-color-blueDark
+                .tile-content
+                  img.place-right(src='images/michael.jpg')
+                  h4(style='margin-bottom: 5px;') michael_angiulo
+                  p
+                    | I just saw Thor last night. It was awesome! I think you'd love it.
+                    h5 RT @julie_green
+                .brand
+                  span.name Tweet@rama
+            h3 Tiles content built-in subclasses
+            p
+              | Tiles content can be organized with built-in subclasses:
+              code .icon
+              | ,
+              code .image
+              | ,
+              code .image-set
+              | ,
+              code .image-slider
+              | .
+            .grid
+              .row
+                .span2
+                  h5 Subclass .icon
+                  .tile.icon
+                    .tile-content
+                      img(src='images/armor.png')
+                .span4
+                  h5 Subclass .image
+                  .tile.double.image
+                    .tile-content
+                      img(src='images/5.jpg', alt='')
+                .span4
+                  h5 Subclass .image-set
+                  .tile.double.image-set
+                    .tile-content
+                      img(src='images/1.jpg', alt='')
+                    .tile-content
+                      img(src='images/2.jpg', alt='')
+                    .tile-content
+                      img(src='images/3.jpg', alt='')
+                    .tile-content
+                      img(src='images/4.jpg', alt='')
+                    .tile-content
+                      img(src='images/5.jpg', alt='')
+              pre.prettyprint.linenums.
+                    <div class="tile icon(image)">
+                        <div class="tile-content">
+                            <img />
+                        </div>
+                    </div>
+                    ------------
+                    <div class="tile image-set">
+                        <div class="tile-content">
+                            <img />
+                        </div>
+                        <div class="tile-content">
+                            <img />
+                        </div>
+                        <div class="tile-content">
+                            <img />
+                        </div>
+                        <div class="tile-content">
+                            <img />
+                        </div>
+                        <div class="tile-content">
+                            <img />
+                        </div>
+                    </div>
+                    ------------
+                    <div class="tile image-slider" data-role="image-slider">
+                        <div class="tile-content">
+                            <img />
+                        </div>
+                        ...
+                        <div class="tile-content">
+                            <img />
+                        </div>
+                    </div>
+
+              h2#tile-slider-plugin Tile Slider Plugin
+              p
+                | For use
+                code tile-slider
+                | you mus include
+                code tile-slider.js
+                | in head of you page and add attribute
+                code data-role="tile-slider"
+                | to tile object.
+                | To set specific parameters such as
+                code direction
+                | ,
+                code duration
+                | and
+                code period
+                | you must add param
+                code data-param-direction(duration, period)
+                | to tile object.
+              .tile.double.image-slider(data-role='tile-slider')
+                .tile-content
+                  img(src='images/1.jpg', alt='')
+                .tile-content
+                  img(src='images/2.jpg', alt='')
+                .tile-content
+                  img(src='images/3.jpg', alt='')
+                .tile-content
+                  img(src='images/4.jpg', alt='')
+                .tile-content
+                  img(src='images/5.jpg', alt='')
+              .tile.double.image-slider(data-role='tile-slider', data-param-direction='left', data-param-period='3000')
+                .tile-content
+                  img(src='images/1.jpg', alt='')
+                .tile-content
+                  img(src='images/2.jpg', alt='')
+                .tile-content
+                  img(src='images/3.jpg', alt='')
+                .tile-content
+                  img(src='images/4.jpg', alt='')
+                .tile-content
+                  img(src='images/5.jpg', alt='')
+              .tile.double.image-slider(data-role='tile-slider', data-param-direction='down', data-param-period='3000')
+                .tile-content
+                  img(src='images/1.jpg', alt='')
+                .tile-content
+                  img(src='images/2.jpg', alt='')
+                .tile-content
+                  img(src='images/3.jpg', alt='')
+                .tile-content
+                  img(src='images/4.jpg', alt='')
+                .tile-content
+                  img(src='images/5.jpg', alt='')
+              .tile.double.image-slider(data-role='tile-slider', data-param-direction='right', data-param-period='3000', data-param-duration='3000')
+                .tile-content
+                  img(src='images/1.jpg', alt='')
+                .tile-content
+                  img(src='images/2.jpg', alt='')
+                .tile-content
+                  img(src='images/3.jpg', alt='')
+                .tile-content
+                  img(src='images/4.jpg', alt='')
+                .tile-content
+                  img(src='images/5.jpg', alt='')
+              .tile.double.bg-color-green(data-role='tile-slider', data-param-period='3000')
+                .tile-content
+                  h2 mattberg@live.com
+                  h5 Re: Wedding Annoucement!
+                  p
+                    | Congratulations! I'm really excited to celebrate with you all. Thanks for...
+                .tile-content
+                  h2 tina@live.com
+                  h5 Re: Wedding Annoucement!
+                  p
+                    | Huh! Waw!!! I'm really excited to celebrate with you all. Thanks for...
+                .brand
+                  .badge 12
+                  img.icon(src='images/Mail128.png')
+            p
+              | The default value of params:
+              ul
+                li Duration - 1000ms
+                li Period - 2000ms
+                li Direction - "up"
+            h3 Tile status
+            p
+              | Tile status (branding info) can be placed in sub container with class
+              code .brand
+              | or
+              code .tile-status
+              | . Tile status background color can be changed, example with built-in classes
+              code .bg-color-*
+            pre.prettyprint.linenums.
+              \n    <div class="tile">
+                      <div class="brand">
+
+                      </div>
+                  </div>
+
+            h3 Tile status > badge
+            p
+              | A badge can display either a number from 1-99 or a status glyph. badge is positioned in tile status container on the bottom right corner.
+              | Metro UI CSS support main Windows 8 badges:
+              span.fg-color-blue
+                | activity, alert, available, away, busy, newMessage, paused, playing, unavailable, error and attention
+              | as built-in. Default badge background color is blue but may be changed, example with built-in classes
+              code .bg-color-*
+              | .
+            pre.prettyprint.linenums.
+              \n    <div class="tile">
+                      <div class="brand">
+                          <div class="badge activity"></div>
+                      </div>
+                  </div>
+
+            .clearfix
+              .tile
+                .tile-status
+                  .badge.bg-color-blue 99
+              .tile
+                .tile-status
+                  .badge.activity
+              .tile
+                .brand
+                  .badge.alert
+              .tile
+                .brand
+                  .badge.available
+              .tile
+                .brand
+                  .badge.away
+              .tile
+                .brand
+                  .badge.busy
+              .tile
+                .brand
+                  .badge.newMessage
+              .tile
+                .brand
+                  .badge.paused
+              .tile
+                .brand
+                  .badge.playing
+              .tile
+                .brand
+                  .badge.unavailable
+              .tile
+                .brand
+                  .badge.error
+              .tile
+                .brand
+                  .badge.attention
+            h3 Tile status > Branding info
+            p
+              | A branding info can display brand name or a brand glyph. Branding info  is positioned in tile status container on the bottom left corner.
+            pre.prettyprint.linenums.
+              \n    <div class="tile">
+                      <div class="brand">
+                          <div class="name">Name</div>
+                      </div>
+                  </div>
+
+                  <div class="tile">
+                      <div class="brand">
+                          <div class="icon"> <img /> </div>
+                      </div>
+                  </div>
+
+            .clearfix
+              .tile
+                .brand
+                  .badge 10
+                  .name Mail
+              .tile.double.bg-color-green
+                .brand
+                  .badge 12
+                  img.icon(src='images/Mail128.png')
+              .tile.double.bg-color-pink
+                .brand
+                  .name Photos
+      .tiles.clearfix
+        h3 Examples of tiles made with Metro UI CSS
+        .tile.image
+          .tile-content
+            img(src='images/myface.jpg', alt='')
+        .tile.icon
+          .tile-content
+            img(src='images/Mail128.png')
+          .brand
+            .badge 10
+            .name Mail
+        .tile.bg-color-orangeDark.icon.selected
+          b.check
+          .tile-content
+            img(src='images/Video128.png', alt='')
+          .brand
+            span.name Video
+        .tile.double.image
+          .tile-content
+            img(src='images/5.jpg', alt='')
+          .brand
+            span.name Pictures
+            .badge.bg-color-orange 5
+        .tile.double-vertical.bg-color-yellow.icon
+          .tile-content
+            img(src='images/Calendar128.png')
+          .brand
+            span.name Calendar
+        .tile.bg-color-green.icon.selected
+          b.check
+          .tile-content
+            img(src='images/Market128.png')
+          .brand
+            span.name Store
+            span.badge 6
+        .tile.bg-color-red.icon.selected
+          .tile-content
+            img(src='images/Music128.png', alt='')
+          .brand
+            span.name Music
+        .tile.double.bg-color-blueDark
+          .tile-content
+            img.place-left(src='images/michael.jpg')
+            h3(style='margin-bottom: 5px;') michael_angiulo
+            p
+              | I just saw Thor last night. It was awesome! I think you'd love it.
+              h5 RT @julie_green
+          .brand
+            span.name Tweet@rama
+        .tile.bg-color-darken.icon
+          .tile-content
+            img(src='images/YouTube128.png', alt='')
+          .brand
+            span.name YouTube
+        .tile.icon
+          .tile-content
+            img(src='images/excel2013icon.png')
+          .brand
+            span.name Excel 2013
+        .tile.double.bg-color-green
+          .tile-content
+            h2 mattberg@live.com
+            h5 Re: Wedding Annoucement!
+            p
+              | Congratulations! I'm really excited to celebrate with you all. Thanks for...
+          .brand
+            .badge 12
+            img.icon(src='images/Mail128.png')
+        .tile.double.image
+          .tile-content
+            img(src='images/4.jpg', alt='')
+          .brand.bg-color-orange
+            img.icon(src='images/Rss128.png')
+            p.text This is a desert eagle. He is very hungry and angry bird.
+            .badge 10
+        .tile.double.image-set
+          .tile-content
+            img(src='images/1.jpg', alt='')
+          .tile-content
+            img(src='images/2.jpg', alt='')
+          .tile-content
+            img(src='images/3.jpg', alt='')
+          .tile-content
+            img(src='images/4.jpg', alt='')
+          .tile-content
+            img(src='images/5.jpg', alt='')
+          .brand
+            span.name Photos
+        .tile.bg-color-blue.icon
+          .tile-content
+            img(src='images/InternetExplorer128.png')
+          .brand
+            span.name Internet Explorer
+      br
+      .grid
+        .row
+include footer
