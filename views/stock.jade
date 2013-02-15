@@ -1,0 +1,23 @@
+include common/header
+#page-index.page.secondary
+    .page-header
+        .page-header-content
+            h1
+                | 煮饺子
+                small 库存管理
+            a.back-button.big.page-back(href='/index')
+    .page-region
+        .page-region-content
+            .grid
+                .row
+                    table.span10.striped
+                        thead
+                            tr
+                                th 名称
+                                th 种类
+                                th 价格
+                                th 操作
+                        tbody
+                        tbody.new
+include common/footer
+script(type='text/javascript', src='/static/js/page/stock.js')

@@ -4,167 +4,108 @@ include common/header
         .page-header-content
             h1
                 | 煮饺子
-                small 菜单
+                small 订单状态
             a.back-button.big.page-back(href='/index')
     .page-region
         .page-region-content
             .grid
                 .row
-                    .span3
-                        h2 当前状态
-                        .notices
-                            .bg-color-green
-                                a.close
-                                .notice-icon
-                                    img(src='/static/images/Mail128.png')
-                                .notice-header.fg-color-white 订购成功
-                                .text 11:40 后可以来领取
-                .row.clearfix
-                    .span10
-                        h2 请选择
-                        h3 三全饺子
-                        .clearfix
-                            .tile.bg-color-green
-                                .tile-content
-                                    h2 猪肉韭菜
-                                    br
-                                    p
-                                        | 15个 / 10元
-                                .brand
-                                    .badge 1
-                                    img.icon(src='/static/images/Market128.png')
-                            .tile.bg-color-green
-                                .tile-content
-                                    h2 猪肉白菜
-                                    br
-                                    p
-                                        | 15个 / 10元
-                                .brand
-                                    .badge 1
-                                    img.icon(src='/static/images/Market128.png')
-                            .tile.bg-color-green
-                                .tile-content
-                                    h2 鸡蛋韭菜
-                                    br
-                                    p
-                                        | 15个 / 10元
-                                .brand
-                                    .badge 1
-                                    img.icon(src='/static/images/Market128.png')
-                            .tile.bg-color-green
-                                .tile-content
-                                    h2 猪肉芥菜
-                                    br
-                                    p
-                                        | 15个 / 10元
-                                .brand
-                                    .badge 1
-                                    img.icon(src='/static/images/Market128.png')
-                            .tile.bg-color-green
-                                .tile-content
-                                    h2 猪肉芹菜
-                                    br
-                                    p
-                                        | 15个 / 10元
-                                .brand
-                                    .badge 1
-                                    img.icon(src='/static/images/Market128.png')
-                            .tile.bg-color-green
-                                .tile-content
-                                    h2 猪肉大葱
-                                    br
-                                    p
-                                        | 15个 / 10元
-                                .brand
-                                    .badge 1
-                                    img.icon(src='/static/images/Market128.png')
-                            .tile.bg-color-green
-                                .tile-content
-                                    h2 三鲜
-                                    br
-                                    p
-                                        | 15个 / 10元
-                                .brand
-                                    .badge 1
-                                    img.icon(src='/static/images/Market128.png')
-                            .tile.bg-color-green
-                                .tile-content
-                                    h2 香菇
-                                    br
-                                    p
-                                        | 15个 / 10元
-                                .brand
-                                    .badge 1
-                                    img.icon(src='/static/images/Market128.png')
-                            .tile.bg-color-green
-                                .tile-content
-                                    h2 羊肉
-                                    br
-                                    p
-                                        | 15个 / 10元
-                                .brand
-                                    .badge 1
-                                    img.icon(src='/static/images/Market128.png')
-                        h3 湾仔饺子
-                        .clearfix
-                            .tile.bg-color-blue
-                                .tile-content
-                                    h2 猪肉韭菜
-                                    br
-                                    p
-                                        | 15个 / 10元
-                                .brand
-                                    .badge 1
-                                    img.icon(src='/static/images/Market128.png')
-                            .tile.bg-color-blue
-                                .tile-content
-                                    h2 猪肉白菜
-                                    br
-                                    p
-                                        | 15个 / 10元
-                                .brand
-                                    .badge 1
-                                    img.icon(src='/static/images/Market128.png')
-                            .tile.bg-color-blue
-                                .tile-content
-                                    h2 猪肉玉米
-                                    br
-                                    p
-                                        | 15个 / 10元
-                                .brand
-                                    .badge 1
-                                    img.icon(src='/static/images/Market128.png')
-                            .tile.bg-color-blue
-                                .tile-content
-                                    h2 猪肉芥菜
-                                    br
-                                    p
-                                        | 15个 / 10元
-                                .brand
-                                    .badge 1
-                                    img.icon(src='/static/images/Market128.png')
-                            .tile.bg-color-blue
-                                .tile-content
-                                    h2 猪肉芹菜
-                                    br
-                                    p
-                                        | 15个 / 10元
-                                .brand
-                                    .badge 1
-                                    img.icon(src='/static/images/Market128.png')
-                            .tile.bg-color-blue
-                                .tile-content
-                                    h2 冬菇鸡肉
-                                    br
-                                    p
-                                        | 15个 / 10元
-                                .brand
-                                    .badge 1
-                                    img.icon(src='/static/images/Market128.png')
-                        h3 我
-                        .clearfix
-                            .button-set(data-role='button-set')
-                                button 很饿
-                                button.active 有点饿
-                                button 不是很饿
+                    span.span1 订单日期
+                    select.span2
+                        option('value'='2013-3-1','selected'='selected') 2013-3-1
+                        option('value'='2013-3-2') 2013-3-2
+                        option('value'='2013-3-3') 2013-3-3
+                .row
+                    table.span10.striped
+                        thead
+                            th 饺子
+                            th 客户
+                            th 联系方式
+                            th 时间
+                            th 备注
+                            th 操作
+                        tr
+                            td 三全 / 猪肉韭菜 / 1
+                            td 朱哲
+                            td 74248
+                                a('href'='')
+                                    img('src'='http://amos.alicdn.com/online.aw?v=2&uid=zhuzhe1983%3A008&site=cntaobao&s=2&charset=utf-8')
+                            td 11:30
+                            td 九分熟，略微老一点
+                            td
+                                select
+                                    option('value'='已确认','selected'='selected') 已确认
+                                    option('value'='已下锅') 已下锅
+                                    option('value'='已付款') 已付款
+                                    option('value'='已取消') 已取消
+                        tr
+                            td 三全 / 猪肉韭菜 / 1
+                            td 朱哲
+                            td 74248
+                                a('href'='')
+                                    img('src'='http://amos.alicdn.com/online.aw?v=2&uid=zhuzhe1983%3A008&site=cntaobao&s=2&charset=utf-8')
+                            td 11:30
+                            td 九分熟，略微老一点
+                            td
+                                select
+                                    option('value'='已确认','selected'='selected') 已确认
+                                    option('value'='已下锅') 已下锅
+                                    option('value'='已付款') 已付款
+                                    option('value'='已取消') 已取消
+                        tr.success
+                            td 三全 / 猪肉韭菜 / 1
+                            td 朱哲
+                            td 74248
+                                a('href'='')
+                                    img('src'='http://amos.alicdn.com/online.aw?v=2&uid=zhuzhe1983%3A008&site=cntaobao&s=2&charset=utf-8')
+                            td 11:30
+                            td 九分熟，略微老一点
+                            td
+                                select
+                                    option('value'='已确认') 已确认
+                                    option('value'='已下锅') 已下锅
+                                    option('value'='已付款','selected'='selected') 已付款
+                                    option('value'='已取消') 已取消
+                        tr.info
+                            td 三全 / 猪肉韭菜 / 1
+                            td 朱哲
+                            td 74248
+                                a('href'='')
+                                    img('src'='http://amos.alicdn.com/online.aw?v=2&uid=zhuzhe1983%3A008&site=cntaobao&s=2&charset=utf-8')
+                            td 11:30
+                            td 九分熟，略微老一点
+                            td
+                                select
+                                    option('value'='已确认','selected'='selected') 已确认
+                                    option('value'='已下锅') 已下锅
+                                    option('value'='已付款') 已付款
+                                    option('value'='已取消') 已取消
+                        tr.error
+                            td 三全 / 猪肉韭菜 / 1
+                            td 朱哲
+                            td 74248
+                                a('href'='')
+                                    img('src'='http://amos.alicdn.com/online.aw?v=2&uid=zhuzhe1983%3A008&site=cntaobao&s=2&charset=utf-8')
+                            td 11:30
+                            td 12：00左右来取
+                            td
+                                select
+                                    option('value'='已确认') 已确认
+                                    option('value'='已下锅') 已下锅
+                                    option('value'='已付款','selected'='selected') 已付款
+                                    option('value'='已取消') 已取消
+                        tr.warning
+                            td 三全 / 猪肉韭菜 / 1
+                            td 朱哲
+                            td 74248
+                                a('href'='')
+                                    img('src'='http://amos.alicdn.com/online.aw?v=2&uid=zhuzhe1983%3A008&site=cntaobao&s=2&charset=utf-8')
+                            td 11:30
+                            td 零一二三四五六七八九十
+                            td
+                                select
+                                    option('value'='已确认') 已确认
+                                    option('value'='已下锅','selected'='selected') 已下锅
+                                    option('value'='已付款') 已付款
+                                    option('value'='已取消') 已取消
 include common/footer
